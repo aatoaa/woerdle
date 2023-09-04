@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
-import { checkCharMatch, checkScore, wordLength } from './utils';
+import {
+  checkCharMatch,
+  checkScore,
+  getWord,
+  wordLength,
+  wordList,
+} from './utils';
 
 function Game() {
-  let answer = 'tuutti';
+  const [answer, setAnswer] = useState(getWord(wordList));
   const [newGuess, setNewGuess] = useState('');
   const [guessArr, setGuessArr] = useState<string[][] | undefined>(undefined);
   const [done, setDone] = useState(false);
@@ -55,6 +61,7 @@ function Game() {
     setGuessArr(undefined);
     setNewGuess('');
     setDone(false);
+    setAnswer(getWord(wordList));
   }
 }
 

@@ -51,3 +51,49 @@ export function checkScore(guess: string[]) {
   }
   return res;
 }
+
+export function getWord(wordList: string[]) {
+  return wordList[Math.floor(Math.random() * wordList.length)];
+}
+
+export const wordList = [
+  'apple',
+  'bagel',
+  'basil',
+  'bison',
+  'camel',
+  'crumb',
+  'donut',
+  'elbow',
+  'fluff',
+  'flute',
+  'fuzzy',
+  'gecko',
+  'guava',
+  'hippo',
+  'honey',
+  'juice',
+  'jello',
+  'kitty',
+  'koala',
+  'lemon',
+  'mints',
+  'moose',
+  'nacho',
+  'olive',
+  'otter',
+  'peach',
+  'pizza',
+  'puppy',
+  'rocks',
+  'sloth',
+  'snail',
+  'sugar',
+  'syrup',
+  'tacos',
+  'trout',
+  'water',
+  'wheat',
+  'yeast',
+  'zebra',
+];

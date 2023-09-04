@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
-import { checkCharMatch, wordLength } from './utils';
+import { checkCharMatch, checkScore, wordLength } from './utils';
 
 function Game() {
   let answer = 'tuutti';
@@ -11,7 +11,8 @@ function Game() {
 
   useEffect(() => {
     if (newGuess.length > 0) {
-      const guess = checkCharMatch(newGuess, answer, setDone);
+      const guess = checkCharMatch(newGuess, answer);
+      if (checkScore(guess)) setDone(true);
       let newArr = guessArr ? [...guessArr] : [];
       newArr.push(guess);
       setGuessArr(newArr);

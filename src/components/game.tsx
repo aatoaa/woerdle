@@ -20,7 +20,9 @@ function Game() {
 
   return (
     <div className="game-container">
-      <div className={`game-area ${done ? 'done' : ''}`}>{<RenderRows />}</div>
+      <div className={`game-area ${done ? 'done' : ''}`}>
+        {<RenderRows />}
+      </div>
       <div className="extras">
         <button id="start" disabled={!done} onClick={handleStart}>
           New Game
@@ -57,20 +59,30 @@ function Game() {
 
   function testCharMatch(guess: string, answer: string) {
     let count = 0;
-    let temp: string[] = [];
+    let matchResult: string[] = ['','','','','','',];
+    let availableChars = answer;
+    let usedIndex: number[] = [];
     for (let i = 0; i < guess.length; i++) {
       if (guess[i] === answer[i]) {
-        temp.push(`${guess[i]}: 2`);
+        matchResult.splice(i, 1, `${guess[i]}: 2`);
         count += 2;
-      } else if (answer.includes(guess[i])) {
-        temp.push(`${guess[i]}: 1`);
+        availableChars = availableChars.replace(guess[i], "");
+        usedIndex.push(i);
+      }
+    }
+    for (let i = 0; i < guess.length; i++) {
+      if (answer.includes(guess[i]) && availableChars.includes(guess[i]) && !usedIndex.includes(i)) {
+        matchResult.splice(i, 1, `${guess[i]}: 1`);
         count += 1;
-      } else {
-        temp.push(`${guess[i]}: 0`);
+        availableChars = availableChars.replace(guess[i], "");
+        usedIndex.push(i);
+      } else if (!usedIndex.includes(i)) {
+        matchResult.splice(i, 1, `${guess[i]}: 0`);
+        usedIndex.push(i);
       }
     }
     if (count === 12) setDone(true);
-    return temp;
+    return matchResult;
   }
 }
 

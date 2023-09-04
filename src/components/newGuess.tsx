@@ -8,7 +8,7 @@ interface IGuess {
 
 function NewGuess({ active, handleSubmit }: IGuess) {
   const [guess, setGuess] = useState('');
-  const guessLength = [...Array(wordLength).keys()]
+  const guessLength = [...Array(wordLength).keys()];
 
   useEffect(() => {
     if (active) {
@@ -19,7 +19,9 @@ function NewGuess({ active, handleSubmit }: IGuess) {
 
   return (
     <div className={`guess new-guess ${active ? 'active' : ''}`}>
-      {guessLength.map((_, i) => (<span key={i}>{guess[i]}</span>))}
+      {guessLength.map((_, i) => (
+        <span key={i}>{guess[i]}</span>
+      ))}
     </div>
   );
 

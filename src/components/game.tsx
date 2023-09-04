@@ -22,9 +22,7 @@ function Game() {
 
   return (
     <div className="game-container">
-      <div className={`game-area ${done ? 'done' : ''}`}>
-        {<RenderRows />}
-      </div>
+      <div className={`game-area ${done ? 'done' : ''}`}>{<RenderRows />}</div>
       <div className="extras">
         <button id="start" disabled={!done} onClick={handleStart}>
           New Game
@@ -68,22 +66,26 @@ function Game() {
       if (guess[i] === answer[i]) {
         matchResult.splice(i, 1, `${guess[i]}: 2`);
         count += 2;
-        availableChars = availableChars.replace(guess[i], "");
+        availableChars = availableChars.replace(guess[i], '');
         usedIndex.push(i);
       }
     }
     for (let i = 0; i < guess.length; i++) {
-      if (answer.includes(guess[i]) && availableChars.includes(guess[i]) && !usedIndex.includes(i)) {
+      if (
+        answer.includes(guess[i]) &&
+        availableChars.includes(guess[i]) &&
+        !usedIndex.includes(i)
+      ) {
         matchResult.splice(i, 1, `${guess[i]}: 1`);
         count += 1;
-        availableChars = availableChars.replace(guess[i], "");
+        availableChars = availableChars.replace(guess[i], '');
         usedIndex.push(i);
       } else if (!usedIndex.includes(i)) {
         matchResult.splice(i, 1, `${guess[i]}: 0`);
         usedIndex.push(i);
       }
     }
-    if (count === wordLength*2) setDone(true);
+    if (count === wordLength * 2) setDone(true);
     return matchResult;
   }
 }

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
-
-export const wordLength = 5;
+import { testCharMatch, wordLength } from './utils';
 
 function Game() {
   let answer = 'tuutti';
@@ -12,7 +11,7 @@ function Game() {
 
   useEffect(() => {
     if (newGuess.length > 0) {
-      const guess = testCharMatch(newGuess, answer);
+      const guess = testCharMatch(newGuess, answer, setDone);
       let newArr = guessArr ? [...guessArr] : [];
       newArr.push(guess);
       setGuessArr(newArr);
@@ -55,38 +54,6 @@ function Game() {
     setGuessArr(undefined);
     setNewGuess('');
     setDone(false);
-  }
-
-  function testCharMatch(guess: string, answer: string) {
-    let count = 0;
-    let matchResult: string[] = new Array(wordLength).fill('');
-    let availableChars = answer;
-    let usedIndex: number[] = [];
-    for (let i = 0; i < guess.length; i++) {
-      if (guess[i] === answer[i]) {
-        matchResult.splice(i, 1, `${guess[i]}: 2`);
-        count += 2;
-        availableChars = availableChars.replace(guess[i], '');
-        usedIndex.push(i);
-      }
-    }
-    for (let i = 0; i < guess.length; i++) {
-      if (
-        answer.includes(guess[i]) &&
-        availableChars.includes(guess[i]) &&
-        !usedIndex.includes(i)
-      ) {
-        matchResult.splice(i, 1, `${guess[i]}: 1`);
-        count += 1;
-        availableChars = availableChars.replace(guess[i], '');
-        usedIndex.push(i);
-      } else if (!usedIndex.includes(i)) {
-        matchResult.splice(i, 1, `${guess[i]}: 0`);
-        usedIndex.push(i);
-      }
-    }
-    if (count === wordLength * 2) setDone(true);
-    return matchResult;
   }
 }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { wordLength } from './game';
+import { wordLength } from './utils';
 
 interface IGuess {
   active?: boolean;

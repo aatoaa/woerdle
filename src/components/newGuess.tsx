@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { wordLength } from './game';
 
 interface IGuess {
   active?: boolean;
@@ -7,6 +8,7 @@ interface IGuess {
 
 function NewGuess({ active, handleSubmit }: IGuess) {
   const [guess, setGuess] = useState('');
+  const guessLength = [...Array(wordLength).keys()]
 
   useEffect(() => {
     if (active) {
@@ -17,18 +19,13 @@ function NewGuess({ active, handleSubmit }: IGuess) {
 
   return (
     <div className={`guess new-guess ${active ? 'active' : ''}`}>
-      <span>{guess[0]}</span>
-      <span>{guess[1]}</span>
-      <span>{guess[2]}</span>
-      <span>{guess[3]}</span>
-      <span>{guess[4]}</span>
-      <span>{guess[5]}</span>
+      {guessLength.map((_, i) => (<span key={i}>{guess[i]}</span>))}
     </div>
   );
 
   function handleKeyDown(e: KeyboardEvent) {
     if (e.key === 'Enter') {
-      if (guess.length === 6) {
+      if (guess.length === wordLength) {
         handleSubmit && handleSubmit(guess);
       }
       return;
@@ -41,7 +38,7 @@ function NewGuess({ active, handleSubmit }: IGuess) {
       return;
     }
     setGuess((prev) => {
-      if (prev.length < 6) {
+      if (prev.length < wordLength) {
         return `${prev}${e.key}`;
       } else {
         return prev;

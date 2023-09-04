@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
 
+export const wordLength = 5;
+
 function Game() {
   let answer = 'tuutti';
   const [newGuess, setNewGuess] = useState('');
@@ -14,7 +16,7 @@ function Game() {
       let newArr = guessArr ? [...guessArr] : [];
       newArr.push(guess);
       setGuessArr(newArr);
-      if (newArr.length === 6) setDone(true);
+      if (newArr.length === wordLength) setDone(true);
     }
   }, [newGuess]);
 
@@ -33,7 +35,7 @@ function Game() {
 
   function RenderRows() {
     let res = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < wordLength; i++) {
       if (guessArr && guessArr[i] !== undefined) {
         res.push(<Guess guess={guessArr[i]} key={i} />);
       } else if ((i === guessArr?.length || i === 0) && !done) {
@@ -59,7 +61,7 @@ function Game() {
 
   function testCharMatch(guess: string, answer: string) {
     let count = 0;
-    let matchResult: string[] = ['','','','','','',];
+    let matchResult: string[] = new Array(wordLength).fill('');
     let availableChars = answer;
     let usedIndex: number[] = [];
     for (let i = 0; i < guess.length; i++) {
@@ -81,7 +83,7 @@ function Game() {
         usedIndex.push(i);
       }
     }
-    if (count === 12) setDone(true);
+    if (count === wordLength*2) setDone(true);
     return matchResult;
   }
 }

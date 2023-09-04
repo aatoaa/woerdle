@@ -1,6 +1,6 @@
 export const wordLength = 5;
 
-export function testCharMatch(
+export function checkCharMatch(
   guess: string,
   answer: string,
   setDone: React.Dispatch<React.SetStateAction<boolean>>,

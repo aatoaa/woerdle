@@ -27,12 +27,16 @@ function Game() {
   }, [newGuess]);
 
   return (
-    <div className="game-container">
-      <div className={`game-area ${done ? 'done' : ''}`}>{<RenderRows />}</div>
-      <div className="extras">
-        <button id="start" disabled={!done} onClick={handleStart}>
-          New Game
-        </button>
+    <div className="game">
+      <div className="game-container">
+        <div className={`game-area ${done ? 'done' : ''}`}>
+          {<RenderRows />}
+        </div>
+        <div className="extras">
+          <button id="start" disabled={!done} onClick={handleStart}>
+            New Game
+          </button>
+        </div>
       </div>
     </div>
   );

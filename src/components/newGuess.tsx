@@ -38,7 +38,6 @@ function NewGuess({ active, handleSubmit }: IGuess) {
       return;
     }
     if (!/[a-zåäöA-ZÅÄÖ]/.test(e.key) || e.key.length > 1) {
-      e.preventDefault();
       return;
     }
     setGuess((prev) => {

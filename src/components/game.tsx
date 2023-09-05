@@ -5,7 +5,6 @@ import {
   checkCharMatch,
   checkWordMatch,
   getWord,
-  wordLength,
   wordList,
 } from './utils';
 

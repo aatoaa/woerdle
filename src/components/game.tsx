@@ -22,7 +22,7 @@ function Game() {
       let newArr = guessArr ? [...guessArr] : [];
       newArr.push(guess);
       setGuessArr(newArr);
-      if (newArr.length === wordLength) setDone(true);
+      if (newArr.length === 6) setDone(true);
     }
   }, [newGuess]);
 
@@ -43,7 +43,7 @@ function Game() {
 
   function RenderRows() {
     let res = [];
-    for (let i = 0; i < wordLength; i++) {
+    for (let i = 0; i < 6; i++) {
       if (guessArr && guessArr[i] !== undefined) {
         res.push(<Guess guess={guessArr[i]} key={i} />);
       } else if ((i === guessArr?.length || i === 0) && !done) {

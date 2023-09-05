@@ -3,7 +3,7 @@ import Guess from './guessListItem';
 import NewGuess from './newGuess';
 import {
   checkCharMatch,
-  checkScore,
+  checkWordMatch,
   getWord,
   wordLength,
   wordList,
@@ -18,7 +18,7 @@ function Game() {
   useEffect(() => {
     if (newGuess.length > 0) {
       const guess = checkCharMatch(newGuess, answer);
-      if (checkScore(guess)) setDone(true);
+      if (checkWordMatch(newGuess, answer)) setDone(true);
       let newArr = guessArr ? [...guessArr] : [];
       newArr.push(guess);
       setGuessArr(newArr);

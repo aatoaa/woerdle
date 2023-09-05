@@ -37,19 +37,8 @@ export function checkCharMatch(guess: string, answer: string) {
   return matchResult;
 }
 
-export function checkScore(guess: string[]) {
-  let res = false;
-  let total = 0;
-  guess.map((x) => {
-    const points = +x.slice(-1);
-    if (Number.isInteger(points)) {
-      total += points;
-    }
-  });
-  if (total === wordLength * 2) {
-    res = true;
-  }
-  return res;
+export function checkWordMatch(newGuess: string, answer: string) {
+  return newGuess === answer;
 }
 
 export function getWord(wordList: string[]) {

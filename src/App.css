@@ -70,11 +70,16 @@ body {
   border: 2px solid var(--borderGrey);
 }
 .active > span:empty {
-  border-bottom-color: rgb(200, 50, 50);
+  background-color: rgb(50, 50, 50);
+  border-color: rgb(65, 65, 65);
+  border-bottom-color: rgb(100, 100, 100);
+  transition: all 0.3s linear;
 }
 .done .active > span:empty,
 .active span:empty ~ span:empty {
-  border-bottom-color: var(--borderGrey);
+  background-color: transparent;
+  border-color: var(--borderGrey);
+  transition: all 0.3s linear;
 }
 
 .extras {
@@ -86,7 +91,7 @@ body {
   background-color: var(--borderGrey);
   border: 0;
   border-radius: 0.35rem;
-  padding: 1rem;
+  padding: 0.65rem 1rem;
   font-weight: bold;
   font-size: 1rem;
   transition: background-color 200ms ease;

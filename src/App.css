@@ -6,6 +6,7 @@
   --textColor: rgb(238, 238, 238);
   --textGrey: rgb(132, 132, 132);
   --borderGrey: rgb(175, 175, 175);
+  --correctGreen: rgb(33, 200, 33);
 }
 
 html,
@@ -15,6 +16,7 @@ body {
 }
 html * {
   box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 body {
   background-color: var(--bgColor);
@@ -68,7 +70,7 @@ body {
   background-color: rgb(200, 200, 20);
 }
 .guess .exact {
-  background-color: rgb(33, 200, 33);
+  background-color: var(--correctGreen);
 }
 .new-guess span {
   display: grid;
@@ -97,18 +99,21 @@ body {
   font-size: 1rem;
 }
 .extras button {
-  background-color: var(--borderGrey);
+  background-color: var(--correctGreen);
+  color: var(--textColor);
   border: 0;
   border-radius: 0.35rem;
-  padding: 1.2vh 1.9vh;
+  letter-spacing: 0.05vh;
+  padding: 1.1vh 1.6vh;
   font-weight: bold;
-  font-size: 1.9vh;
-  transition: background-color 200ms ease;
+  font-size: 2vh;
+  transition: all 200ms ease;
   opacity: 1;
 }
 .extras button:hover {
-  background-color: var(--textColor);
-  transition: background-color 200ms ease;
+  background-color: rgb(42, 226, 42);
+  color: var(--textColor);
+  transition: all 200ms ease;
   cursor: pointer;
 }
 .extras button[disabled] {

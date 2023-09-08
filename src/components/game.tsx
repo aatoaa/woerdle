@@ -41,7 +41,7 @@ function Game() {
         </div>
         <div className="extras">
           <button id="start" disabled={!done} onClick={handleStart}>
-            New Game
+            NEW GAME
           </button>
         </div>
       </div>

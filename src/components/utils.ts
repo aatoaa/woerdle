@@ -91,7 +91,7 @@ export const wordList = [
   'large',
   'lemon',
   'light',
-  'loayl',
+  'loyal',
   'metal',
   'micro',
   'moose',

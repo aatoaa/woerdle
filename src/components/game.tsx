@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ConfettiExplosion from 'react-confetti-explosion';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
 import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
@@ -8,11 +9,15 @@ function Game() {
   const [newGuess, setNewGuess] = useState('');
   const [guessArr, setGuessArr] = useState<string[][] | undefined>(undefined);
   const [done, setDone] = useState(false);
+  const [win, setWin] = useState(false);
 
   useEffect(() => {
     if (newGuess.length > 0) {
       const guess = checkCharMatch(newGuess, answer);
-      if (checkWordMatch(newGuess, answer)) setDone(true);
+      if (checkWordMatch(newGuess, answer)) {
+        setWin(true);
+        setDone(true);
+      }
       let newArr = guessArr ? [...guessArr] : [];
       newArr.push(guess);
       setGuessArr(newArr);
@@ -31,6 +36,7 @@ function Game() {
     <div className="game">
       <div className="game-container">
         <div className={`game-area ${done ? 'done' : ''}`}>
+          {win && <ConfettiExplosion />}
           {<RenderRows />}
         </div>
         <div className="extras">
@@ -73,6 +79,7 @@ function Game() {
     setGuessArr(undefined);
     setNewGuess('');
     setDone(false);
+    setWin(false);
     setAnswer(getWord(wordList));
   }
 }

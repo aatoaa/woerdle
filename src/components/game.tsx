@@ -36,7 +36,11 @@ function Game() {
     <div className="game">
       <div className="game-container">
         <div className={`game-area ${done ? 'done' : ''}`}>
-          {win && <ConfettiExplosion />}
+          {win && (
+            <div className="confetti">
+              <ConfettiExplosion />
+            </div>
+          )}
           {<RenderRows />}
         </div>
         <div className="extras">

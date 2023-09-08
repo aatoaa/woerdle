@@ -42,6 +42,12 @@ body {
   width: 100%;
   max-width: max-content;
 }
+.confetti {
+  width: 100%;
+}
+.confetti > div {
+  margin: 0 auto;
+}
 .done .guess {
   opacity: 0.8;
 }

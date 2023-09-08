@@ -45,6 +45,10 @@ export function getWord(wordList: string[]) {
   return wordList[Math.floor(Math.random() * wordList.length)];
 }
 
+export function getCurrentGuess(guessArr: string[]) {
+  return guessArr.join('').replace(/[^a-zA-Z]+/g, '');
+}
+
 export const wordList = [
   'apple',
   'bagel',

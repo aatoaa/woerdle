@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
-import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
+import * as utils from './utils';
 
 function Game() {
-  const [answer, setAnswer] = useState(getWord(wordList));
+  const [answer, setAnswer] = useState(utils.getWord(utils.wordList));
   const [newGuess, setNewGuess] = useState('');
   const [guessArr, setGuessArr] = useState<string[][] | undefined>(undefined);
   const [done, setDone] = useState(false);
@@ -13,8 +13,8 @@ function Game() {
 
   useEffect(() => {
     if (newGuess.length > 0) {
-      const guess = checkCharMatch(newGuess, answer);
-      if (checkWordMatch(newGuess, answer)) {
+      const guess = utils.checkCharMatch(newGuess, answer);
+      if (utils.checkWordMatch(newGuess, answer)) {
         setWin(true);
         setDone(true);
       }
@@ -52,7 +52,7 @@ function Game() {
     let res = [];
     for (let i = 0; i < 6; i++) {
       if (guessArr && guessArr[i] !== undefined) {
-        const current = guessArr[i].join('').replace(/[^a-zA-Z]+/g, '');
+        const current = utils.getCurrentGuess(guessArr[i]);
         res.push(
           <Guess guess={guessArr[i]} key={i} win={current === answer} />,
         );
@@ -83,7 +83,7 @@ function Game() {
     setNewGuess('');
     setDone(false);
     setWin(false);
-    setAnswer(getWord(wordList));
+    setAnswer(utils.getWord(utils.wordList));
   }
 }
 

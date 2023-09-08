@@ -39,7 +39,7 @@ body {
 }
 .game-area {
   margin: 3rem 0 0;
-  padding: 2vh 1rem;
+  padding: 2vh 1rem 3vh;
   width: 100%;
   max-width: max-content;
 }
@@ -50,7 +50,7 @@ body {
   margin: 0 auto;
 }
 .done .guess {
-  opacity: 0.7;
+  opacity: 0.65;
 }
 .done .win {
   opacity: 1;
@@ -58,8 +58,8 @@ body {
 .guess {
   display: flex;
   font-size: 1rem;
-  column-gap: 0.55rem;
-  margin: 0 0 0.55rem;
+  column-gap: 0.33rem;
+  margin: 0 0 0.33rem;
   max-width: max-content;
 }
 .guess span {
@@ -71,6 +71,7 @@ body {
   place-items: center;
   text-transform: uppercase;
   background-color: var(--fillGrey);
+  transition: all 0.1s ease-in;
   border: 0;
 }
 .guess .includes {
@@ -88,7 +89,7 @@ body {
   border: 1.5px solid var(--borderGrey);
 }
 .active > span:empty {
-  background-color: rgba(160, 160, 160, 0.075);
+  background-color: rgba(195, 195, 195, 0.075);
   border-bottom-color: rgb(240, 240, 240);
   border-bottom-width: 3.5px;
   transition: all 0.1s ease-in;

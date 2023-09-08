@@ -52,7 +52,10 @@ function Game() {
     let res = [];
     for (let i = 0; i < 6; i++) {
       if (guessArr && guessArr[i] !== undefined) {
-        res.push(<Guess guess={guessArr[i]} key={i} />);
+        const current = guessArr[i].join('').replace(/[^a-zA-Z]+/g, '');
+        res.push(
+          <Guess guess={guessArr[i]} key={i} win={current === answer} />,
+        );
       } else if ((i === guessArr?.length || i === 0) && !done) {
         res.push(
           <NewGuess active={true} handleSubmit={handleSubmit} key={i} />,

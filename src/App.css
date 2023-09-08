@@ -43,6 +43,9 @@ body {
 .done .guess {
   opacity: 0.8;
 }
+.done .win {
+  opacity: 1;
+}
 .guess {
   display: flex;
   font-size: 1rem;

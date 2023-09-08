@@ -1,10 +1,11 @@
 interface iGuess {
   guess: string[];
+  win: boolean;
 }
 
-function Guess({ guess }: iGuess) {
+function Guess({ guess, win }: iGuess) {
   return (
-    <div className="guess">
+    <div className={`guess ${win ? 'win' : ''}`}>
       {guess.map((l, i) => (
         <span className={getClass(l)} key={i}>
           {l[0]}

@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
-import {
-  checkCharMatch,
-  checkWordMatch,
-  getWord,
-  wordList,
-} from './utils';
+import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
 
 function Game() {
   const [answer, setAnswer] = useState(getWord(wordList));
@@ -24,6 +19,13 @@ function Game() {
       if (newArr.length === 6) setDone(true);
     }
   }, [newGuess]);
+
+  useEffect(() => {
+    if (done) {
+      window.addEventListener('keydown', handleKeyDown, false);
+      return () => window.removeEventListener('keydown', handleKeyDown, false);
+    }
+  }, [done]);
 
   return (
     <div className="game">
@@ -58,6 +60,13 @@ function Game() {
 
   function handleSubmit(guess: string) {
     setNewGuess(guess);
+  }
+
+  function handleKeyDown(e: KeyboardEvent) {
+    if (e.key === 'Enter') {
+      handleStart();
+      return;
+    }
   }
 
   function handleStart() {

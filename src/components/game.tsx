@@ -49,6 +49,11 @@ function Game() {
           </button>
         </div>
       </div>
+      <div className="background">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 

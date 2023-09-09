@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import GuessRows from './guess';
 import BtnNewGame from './button-new-game';
-import GameBackground from './game-background';
+import Background from './background';
 import Confetti from './confetti';
 import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
 
@@ -49,7 +49,7 @@ function Game() {
           <BtnNewGame disabled={!done} clickHandler={handleStart} />
         </div>
       </div>
-      <GameBackground />
+      <Background />
     </div>
   );
 

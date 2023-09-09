@@ -1,4 +1,6 @@
-function GameBackground() {
+import './background.css';
+
+function Background() {
   return (
     <div className="background">
       <div></div>
@@ -8,4 +10,4 @@ function GameBackground() {
   );
 }
 
-export default GameBackground;
+export default Background;

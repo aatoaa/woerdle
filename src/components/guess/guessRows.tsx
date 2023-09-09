@@ -1,7 +1,7 @@
 import GuessItem from './guessItem';
 import NewGuess from './newGuess';
 import EmptyGuess from './emptyGuess';
-import { getCurrentGuess } from './utils';
+import { getCurrentGuess } from '../utils';
 
 interface IGuessRows {
   guessArr: string[][] | undefined;

@@ -1,4 +1,4 @@
-import { wordLength } from './utils';
+import { wordLength } from '../utils';
 
 function EmptyGuess() {
   const guessLength = [...Array(wordLength).keys()];

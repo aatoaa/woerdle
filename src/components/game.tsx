@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import GuessRows from './guessRows';
+import GuessRows from './guess/guessRows';
 import BtnNewGame from './btnNewGame';
 import GameBackground from './gameBackground';
 import Confetti from './confetti';

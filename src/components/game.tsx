@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-import ConfettiExplosion from 'react-confetti-explosion';
-import Guess from './guessListItem';
-import NewGuess from './newGuess';
-import BtnNewGame from './btnNewGame';
-import BackgroundGradient from './backgroundGradient';
-import * as utils from './utils';
+import GuessRows from './guess';
+import Button from './button';
+import Background from './background';
+import Confetti from './confetti';
+import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
 
 function Game() {
-  const [answer, setAnswer] = useState(utils.getWord(utils.wordList));
+  const [answer, setAnswer] = useState(getWord(wordList));
   const [newGuess, setNewGuess] = useState('');
   const [guessArr, setGuessArr] = useState<string[][] | undefined>(undefined);
   const [done, setDone] = useState(false);
@@ -15,8 +14,8 @@ function Game() {
 
   useEffect(() => {
     if (newGuess.length > 0) {
-      const guess = utils.checkCharMatch(newGuess, answer);
-      if (utils.checkWordMatch(newGuess, answer)) {
+      const guess = checkCharMatch(newGuess, answer);
+      if (checkWordMatch(newGuess, answer)) {
         setWin(true);
         setDone(true);
       }
@@ -38,39 +37,25 @@ function Game() {
     <div className="game">
       <div className="game-container">
         <div className={`game-area ${done ? 'done' : ''}`}>
-          {win && (
-            <div className="confetti">
-              <ConfettiExplosion />
-            </div>
-          )}
-          <RenderRows />
+          <Confetti enable={win} />
+          <GuessRows
+            guessArr={guessArr}
+            handleSubmit={handleSubmit}
+            answer={answer}
+            done={done}
+          />
         </div>
         <div className="extras">
-          <BtnNewGame disabled={!done} clickHandler={handleStart} />
+          <Button
+            text={`NEW GAME`}
+            clickHandler={handleStart}
+            disabled={!done}
+          />
         </div>
       </div>
-      <BackgroundGradient />
+      <Background />
     </div>
   );
-
-  function RenderRows() {
-    let res = [];
-    for (let i = 0; i < 6; i++) {
-      if (guessArr && guessArr[i] !== undefined) {
-        const current = utils.getCurrentGuess(guessArr[i]);
-        res.push(
-          <Guess guess={guessArr[i]} key={i} win={current === answer} />,
-        );
-      } else if ((i === guessArr?.length || i === 0) && !done) {
-        res.push(
-          <NewGuess active={true} handleSubmit={handleSubmit} key={i} />,
-        );
-      } else {
-        res.push(<NewGuess key={i} />);
-      }
-    }
-    return res;
-  }
 
   function handleSubmit(guess: string) {
     setNewGuess(guess);
@@ -88,7 +73,7 @@ function Game() {
     setNewGuess('');
     setDone(false);
     setWin(false);
-    setAnswer(utils.getWord(utils.wordList));
+    setAnswer(getWord(wordList));
   }
 }
 

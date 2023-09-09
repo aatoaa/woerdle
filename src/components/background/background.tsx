@@ -1,4 +1,6 @@
-function BackgroundGradient() {
+import './background.css';
+
+function Background() {
   return (
     <div className="background">
       <div></div>
@@ -8,4 +10,4 @@ function BackgroundGradient() {
   );
 }
 
-export default BackgroundGradient;
+export default Background;

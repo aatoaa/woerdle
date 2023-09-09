@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { wordLength } from './utils';
 
-interface IGuess {
+interface INewGuess {
   active?: boolean;
   handleSubmit?: (guess: string) => void;
 }
 
-function NewGuess({ active, handleSubmit }: IGuess) {
+function NewGuess({ active, handleSubmit }: INewGuess) {
   const [guess, setGuess] = useState('');
   const guessLength = [...Array(wordLength).keys()];
 

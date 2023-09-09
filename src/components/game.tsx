@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import GuessItem from './guessItem';
-import NewGuess from './newGuess';
+import GuessRows from './guessRows';
 import BtnNewGame from './btnNewGame';
 import GameBackground from './gameBackground';
 import Confetti from './confetti';
@@ -39,7 +38,12 @@ function Game() {
       <div className="game-container">
         <div className={`game-area ${done ? 'done' : ''}`}>
           <Confetti enable={win} />
-          <RenderRows />
+          <GuessRows
+            guessArr={guessArr}
+            handleSubmit={handleSubmit}
+            answer={answer}
+            done={done}
+          />
         </div>
         <div className="extras">
           <BtnNewGame disabled={!done} clickHandler={handleStart} />
@@ -48,25 +52,6 @@ function Game() {
       <GameBackground />
     </div>
   );
-
-  function RenderRows() {
-    let res = [];
-    for (let i = 0; i < 6; i++) {
-      if (guessArr && guessArr[i] !== undefined) {
-        const current = utils.getCurrentGuess(guessArr[i]);
-        res.push(
-          <GuessItem guess={guessArr[i]} key={i} win={current === answer} />,
-        );
-      } else if ((i === guessArr?.length || i === 0) && !done) {
-        res.push(
-          <NewGuess active={true} handleSubmit={handleSubmit} key={i} />,
-        );
-      } else {
-        res.push(<NewGuess key={i} />);
-      }
-    }
-    return res;
-  }
 
   function handleSubmit(guess: string) {
     setNewGuess(guess);

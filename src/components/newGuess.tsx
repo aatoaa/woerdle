@@ -2,23 +2,20 @@ import { useState, useEffect } from 'react';
 import { wordLength } from './utils';
 
 interface INewGuess {
-  active?: boolean;
   handleSubmit?: (guess: string) => void;
 }
 
-function NewGuess({ active, handleSubmit }: INewGuess) {
+function NewGuess({ handleSubmit }: INewGuess) {
   const [guess, setGuess] = useState('');
   const guessLength = [...Array(wordLength).keys()];
 
   useEffect(() => {
-    if (active) {
-      window.addEventListener('keydown', handleKeyDown, false);
-      return () => window.removeEventListener('keydown', handleKeyDown, false);
-    }
+    window.addEventListener('keydown', handleKeyDown, false);
+    return () => window.removeEventListener('keydown', handleKeyDown, false);
   }, [guess]);
 
   return (
-    <div className={`guess new-guess ${active ? 'active' : ''}`}>
+    <div className={`guess new-guess active`}>
       {guessLength.map((_, i) => (
         <span key={i}>{guess[i]}</span>
       ))}

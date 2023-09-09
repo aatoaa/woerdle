@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import GuessItem from './guessItem';
 import NewGuess from './newGuess';
 import BtnNewGame from './btnNewGame';
-import BackgroundGradient from './backgroundGradient';
+import GameBackground from './gameBackground';
 import Confetti from './confetti';
 import * as utils from './utils';
 
@@ -45,7 +45,7 @@ function Game() {
           <BtnNewGame disabled={!done} clickHandler={handleStart} />
         </div>
       </div>
-      <BackgroundGradient />
+      <GameBackground />
     </div>
   );
 

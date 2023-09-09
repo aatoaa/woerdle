@@ -1,4 +1,4 @@
-function BackgroundGradient() {
+function gameBackground() {
   return (
     <div className="background">
       <div></div>
@@ -8,4 +8,4 @@ function BackgroundGradient() {
   );
 }
 
-export default BackgroundGradient;
+export default gameBackground;

@@ -1,0 +1,6 @@
+.confetti {
+  width: 100%;
+}
+.confetti > div {
+  margin: 0 auto;
+}

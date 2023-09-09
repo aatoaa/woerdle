@@ -1,4 +1,5 @@
 import ConfettiExplosion from 'react-confetti-explosion';
+import './confetti.css';
 
 interface IConfetti {
   enable: boolean;

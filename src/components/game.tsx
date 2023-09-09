@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import ConfettiExplosion from 'react-confetti-explosion';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
 import BtnNewGame from './btnNewGame';
 import BackgroundGradient from './backgroundGradient';
+import Confetti from './confetti';
 import * as utils from './utils';
 
 function Game() {
@@ -38,11 +38,7 @@ function Game() {
     <div className="game">
       <div className="game-container">
         <div className={`game-area ${done ? 'done' : ''}`}>
-          {win && (
-            <div className="confetti">
-              <ConfettiExplosion />
-            </div>
-          )}
+          <Confetti enable={win} />
           <RenderRows />
         </div>
         <div className="extras">

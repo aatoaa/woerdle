@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Guess from './guessListItem';
+import GuessItem from './guessItem';
 import NewGuess from './newGuess';
 import BtnNewGame from './btnNewGame';
 import BackgroundGradient from './backgroundGradient';
@@ -55,7 +55,7 @@ function Game() {
       if (guessArr && guessArr[i] !== undefined) {
         const current = utils.getCurrentGuess(guessArr[i]);
         res.push(
-          <Guess guess={guessArr[i]} key={i} win={current === answer} />,
+          <GuessItem guess={guessArr[i]} key={i} win={current === answer} />,
         );
       } else if ((i === guessArr?.length || i === 0) && !done) {
         res.push(

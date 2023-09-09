@@ -3,10 +3,10 @@ import GuessRows from './guessRows';
 import BtnNewGame from './btnNewGame';
 import GameBackground from './gameBackground';
 import Confetti from './confetti';
-import * as utils from './utils';
+import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
 
 function Game() {
-  const [answer, setAnswer] = useState(utils.getWord(utils.wordList));
+  const [answer, setAnswer] = useState(getWord(wordList));
   const [newGuess, setNewGuess] = useState('');
   const [guessArr, setGuessArr] = useState<string[][] | undefined>(undefined);
   const [done, setDone] = useState(false);
@@ -14,8 +14,8 @@ function Game() {
 
   useEffect(() => {
     if (newGuess.length > 0) {
-      const guess = utils.checkCharMatch(newGuess, answer);
-      if (utils.checkWordMatch(newGuess, answer)) {
+      const guess = checkCharMatch(newGuess, answer);
+      if (checkWordMatch(newGuess, answer)) {
         setWin(true);
         setDone(true);
       }
@@ -69,7 +69,7 @@ function Game() {
     setNewGuess('');
     setDone(false);
     setWin(false);
-    setAnswer(utils.getWord(utils.wordList));
+    setAnswer(getWord(wordList));
   }
 }
 

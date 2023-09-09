@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import GuessRows from './guess';
 import BtnNewGame from './btnNewGame';
-import GameBackground from './gameBackground';
+import GameBackground from './game-background';
 import Confetti from './confetti';
 import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
 

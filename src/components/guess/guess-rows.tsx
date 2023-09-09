@@ -1,6 +1,6 @@
-import GuessItem from './guessItem';
-import NewGuess from './newGuess';
-import EmptyGuess from './emptyGuess';
+import GuessItem from './guess-filled';
+import NewGuess from './guess-new';
+import EmptyGuess from './guess-empty';
 import { getCurrentGuess } from '../utils';
 
 interface IGuessRows {

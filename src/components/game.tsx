@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import Guess from './guessListItem';
 import NewGuess from './newGuess';
+import BtnNewGame from './btnNewGame';
+import BackgroundGradient from './backgroundGradient';
 import * as utils from './utils';
 
 function Game() {
@@ -41,19 +43,13 @@ function Game() {
               <ConfettiExplosion />
             </div>
           )}
-          {<RenderRows />}
+          <RenderRows />
         </div>
         <div className="extras">
-          <button id="start" disabled={!done} onClick={handleStart}>
-            NEW GAME
-          </button>
+          <BtnNewGame disabled={!done} clickHandler={handleStart} />
         </div>
       </div>
-      <div className="background">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <BackgroundGradient />
     </div>
   );
 

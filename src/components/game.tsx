@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import GuessRows from './guess';
-import BtnNewGame from './button-new-game';
+import Button from './button';
 import Background from './background';
 import Confetti from './confetti';
 import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
@@ -46,7 +46,11 @@ function Game() {
           />
         </div>
         <div className="extras">
-          <BtnNewGame disabled={!done} clickHandler={handleStart} />
+          <Button
+            text={`NEW GAME`}
+            clickHandler={handleStart}
+            disabled={!done}
+          />
         </div>
       </div>
       <Background />

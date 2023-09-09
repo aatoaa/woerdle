@@ -1,0 +1,24 @@
+.btn {
+  background-color: var(--correctGreen);
+  color: var(--textColor);
+  border: 0;
+  border-radius: 0.35rem;
+  letter-spacing: 0.05vh;
+  padding: 1.1vh 1.6vh;
+  font-weight: bold;
+  font-size: 2vh;
+  transition: all 200ms ease;
+  opacity: 1;
+}
+.btn:hover {
+  background-color: rgb(42, 226, 42);
+  color: var(--textColor);
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.btn[disabled] {
+  opacity: 0;
+}
+.btn[disabled]:hover {
+  cursor: default;
+}

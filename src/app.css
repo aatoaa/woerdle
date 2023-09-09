@@ -55,53 +55,6 @@ body {
 .done .win {
   opacity: 1;
 }
-.guess {
-  display: flex;
-  font-size: 1rem;
-  column-gap: 0.33rem;
-  margin: 0 0 0.33rem;
-  max-width: max-content;
-}
-.guess span {
-  display: grid;
-  aspect-ratio: 1 / 1;
-  border-radius: 0.25rem;
-  font-size: 5vh;
-  min-height: 10vh;
-  place-items: center;
-  text-transform: uppercase;
-  background-color: var(--fillGrey);
-  transition: all 0.1s ease-in;
-  border: 0;
-}
-.guess .includes {
-  background-color: rgb(200, 200, 20);
-}
-.guess .exact {
-  background-color: var(--correctGreen);
-}
-.new-guess span {
-  display: grid;
-  border-radius: 0.25rem;
-  place-items: center;
-  text-transform: uppercase;
-  background-color: transparent;
-  border: 1.5px solid var(--borderGrey);
-}
-.active > span:empty {
-  background-color: rgba(195, 195, 195, 0.075);
-  border-bottom-color: rgb(240, 240, 240);
-  border-bottom-width: 3.5px;
-  transition: all 0.1s ease-in;
-}
-.done .active > span:empty,
-.active span:empty ~ span:empty {
-  background-color: transparent;
-  border-color: var(--borderGrey);
-  border-bottom-width: 1.5px;
-  transition: all 0.1s ease-in;
-}
-
 .extras {
   display: flex;
   justify-content: center;

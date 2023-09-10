@@ -18,7 +18,7 @@
   border: 0;
 }
 .guess .includes {
-  background-color: rgb(200, 200, 20);
+  background-color: rgb(210, 210, 20);
 }
 .guess .exact {
   background-color: var(--correctGreen);
@@ -32,7 +32,7 @@
   border: 1.5px solid var(--borderGrey);
 }
 .active > span:empty {
-  background-color: rgba(195, 195, 195, 0.075);
+  background-color: rgba(205, 205, 205, 0.075);
   border-bottom-color: rgb(240, 240, 240);
   border-bottom-width: 3.5px;
   transition: all 0.1s ease-in;

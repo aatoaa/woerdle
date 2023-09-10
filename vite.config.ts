@@ -11,6 +11,7 @@ export default defineConfig({
     setupFiles: './tests/setup.ts',
     coverage: {
       all: true,
+      exclude: ['src/main.tsx', '.eslintrc.cjs'],
       provider: 'v8',
     },
   },

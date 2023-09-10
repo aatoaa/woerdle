@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import GuessRows from './guess';
-import Button from './button';
-import Background from './background';
-import Confetti from './confetti';
-import { checkCharMatch, checkWordMatch, getWord, wordList } from './utils';
+import GuessRows from '../guess';
+import Button from '../button';
+import Background from '../background';
+import Confetti from '../confetti';
+import { checkCharMatch, checkWordMatch, getWord, wordList } from '../utils';
 
 function Game() {
   const [answer, setAnswer] = useState(getWord(wordList));

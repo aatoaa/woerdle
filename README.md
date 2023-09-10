@@ -10,6 +10,11 @@ Use the keyboard to type your guess and press enter to submit the current guess.
 
 Clone the repo
 
+using `ssh`  
+```bash
+git clone git@github.com:aatoaa/woerdle.git
+```
+using `https`  
 ```bash
 git clone https://github.com/aatoaa/woerdle.git
 ```

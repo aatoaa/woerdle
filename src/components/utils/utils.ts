@@ -125,6 +125,7 @@ export const wordList = [
   'thumb',
   'turbo',
   'toast',
+  'torus',
   'trout',
   'video',
   'water',

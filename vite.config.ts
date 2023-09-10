@@ -11,7 +11,7 @@ export default defineConfig({
     setupFiles: './tests/setup.ts',
     coverage: {
       all: true,
-      exclude: ['src/main.tsx', '.eslintrc.cjs'],
+      exclude: ['src/main.tsx', '.eslintrc.cjs', 'src/vite-env.d.ts'],
       provider: 'v8',
     },
   },

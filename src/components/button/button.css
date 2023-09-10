@@ -3,8 +3,7 @@
   color: var(--textColor);
   border: 0;
   border-radius: 0.35rem;
-  letter-spacing: 0.05vh;
-  padding: 1.1vh 1.6vh;
+  padding: 1.1vh 2vh 1.12vh;
   font-weight: bold;
   font-size: 2vh;
   transition: all 200ms ease;

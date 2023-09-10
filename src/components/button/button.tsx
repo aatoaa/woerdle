@@ -1,12 +1,16 @@
 import './button.css';
 
 interface IBtnNewGame {
-  text: string;
-  disabled: boolean;
+  text?: string;
+  disabled?: boolean;
   clickHandler: () => void;
 }
 
-function BtnNewGame({ text = 'Click', clickHandler, disabled }: IBtnNewGame) {
+function BtnNewGame({
+  text = 'Click',
+  clickHandler,
+  disabled = false,
+}: IBtnNewGame) {
   return (
     <button
       id="start"

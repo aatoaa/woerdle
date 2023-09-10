@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { wordLength } from '../utils';
+import { wordLength } from '../utils/utils';
 
 interface INewGuess {
   handleSubmit?: (guess: string) => void;

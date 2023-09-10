@@ -2,7 +2,7 @@
 
 Woerdle is a guessing game for 5 letter words.
 
-Use the keyboard to type your guess and press enter to submit current guess. Game will indicate how well your guess matches the correct answer by highlighting exactly matching letters by green and correct letters in different position by yellow.
+Use the keyboard to type your guess and press enter to submit the current guess. Game will indicate how well your guess matches the correct answer by highlighting exactly matching letters by green and correct letters in different position by yellow.
 
 ## Installation
 

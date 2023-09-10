@@ -1,5 +1,7 @@
 # Woerdle
 
+![react-blast-toast](https://github.com/aatoaa/woerdle/assets/130067118/9e1c6028-849a-47a5-9236-d25ab8cb6e54)
+
 Woerdle is a guessing game for 5 letter words.
 
 Use the keyboard to type your guess and press enter to submit the current guess. Game will indicate how well your guess matches the correct answer by highlighting exactly matching letters by green and correct letters in different position by yellow.

@@ -61,7 +61,7 @@ function Game() {
   );
 
   function handleSubmit(guess: string) {
-    setNewGuess(guess);
+    setNewGuess(guess.toLowerCase());
   }
 
   function handleKeyDown(e: KeyboardEvent) {

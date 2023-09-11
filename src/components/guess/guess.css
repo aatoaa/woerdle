@@ -41,7 +41,7 @@
   border-bottom-width: 3.5px;
   transition: all 0.1s ease-in;
   animation-name: active-bg;
-  animation-duration: 4s;
+  animation-duration: 3.75s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
@@ -59,7 +59,7 @@
     background-color: rgba(205, 205, 205, 0.005);
   }
   50% {
-    background-color: rgba(205, 205, 205, 0.2);
+    background-color: rgba(205, 205, 205, 0.33);
   }
   100% {
     background-color: rgba(205, 205, 205, 0.005);
@@ -68,7 +68,7 @@
 
 @keyframes pulse {
   0% {
-    transform: scale(0.97);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(33, 200, 33, 0.85);
   }
 
@@ -79,7 +79,7 @@
   }
 
   100% {
-    transform: scale(0.97);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(33, 200, 33, 0);
   }
 }

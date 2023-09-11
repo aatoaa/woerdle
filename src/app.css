@@ -1,6 +1,4 @@
 :root {
-  --primary: rgb(204, 34, 22);
-  --primaryHover: rgb(233, 68, 56);
   --bgColor: rgb(31, 31, 31);
   --bgColorDarker: rgb(26, 26, 26);
   --textColor: rgb(238, 238, 238);
@@ -20,8 +18,15 @@ html * {
   font-family: 'Oswald', sans-serif;
 }
 body {
-  background-color: var(--bgColor);
   color: var(--textColor);
+  background: rgb(215, 75, 75);
+  background: radial-gradient(
+    circle,
+    rgba(209, 79, 79, 0.975) 0%,
+    rgba(211, 117, 80, 0.975) 30%,
+    rgba(70, 141, 179, 0.975) 95%,
+    rgba(128, 128, 142, 0.975) 100%
+  );
 }
 
 .game {
@@ -29,7 +34,6 @@ body {
   margin: 0 auto;
   height: 100vh;
 }
-
 .game-container {
   display: flex;
   flex-direction: column;

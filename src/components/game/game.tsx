@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import GuessRows from '../guess';
 import Button from '../button';
-import Background from '../background';
 import Confetti from '../confetti';
 import {
   checkCharMatch,
@@ -58,7 +57,6 @@ function Game() {
           />
         </div>
       </div>
-      <Background />
     </div>
   );
 

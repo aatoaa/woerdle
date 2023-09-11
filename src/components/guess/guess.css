@@ -83,3 +83,14 @@
     box-shadow: 0 0 0 0 rgba(33, 200, 33, 0);
   }
 }
+@media screen and (max-width: 600px) {
+  .guess span {
+    font-size: 9vw;
+    min-height: 15vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  .guess span {
+    font-size: 10vw;
+  }
+}

@@ -1,6 +1,6 @@
 # Woerdle
 
-![react-party-dance](https://github.com/aatoaa/woerdle/assets/130067118/435a1ffe-016d-493c-bb0c-617ba813d7a7)
+![react-party-dance](https://github.com/aatoaa/woerdle/assets/130067118/9ba37c53-c03a-49f0-aa74-e95ce2a754b5)
 
 Woerdle is a guessing game for 5 letter words.
 

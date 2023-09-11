@@ -1,14 +1,14 @@
 .guess {
   display: flex;
   font-size: 1rem;
-  column-gap: 0.33rem;
-  margin: 0 0 0.33rem;
+  column-gap: 0.275rem;
+  margin: 0 0 0.275rem;
   max-width: max-content;
 }
 .guess span {
   display: grid;
   aspect-ratio: 1 / 1;
-  border-radius: 0.25rem;
+  border-radius: 0.275rem;
   font-size: 5vh;
   min-height: 10vh;
   place-items: center;

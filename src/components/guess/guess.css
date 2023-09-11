@@ -1,14 +1,14 @@
 .guess {
   display: flex;
   font-size: 1rem;
-  column-gap: 0.33rem;
-  margin: 0 0 0.33rem;
+  column-gap: 0.275rem;
+  margin: 0 0 0.275rem;
   max-width: max-content;
 }
 .guess span {
   display: grid;
   aspect-ratio: 1 / 1;
-  border-radius: 0.25rem;
+  border-radius: 0.275rem;
   font-size: 5vh;
   min-height: 10vh;
   place-items: center;
@@ -33,6 +33,9 @@
   place-items: center;
   text-transform: uppercase;
   background-color: transparent;
+  border: 1.5px solid var(--borderEmptyGrey);
+}
+.active span {
   border: 1.5px solid var(--borderGrey);
 }
 .active > span:empty {
@@ -81,5 +84,16 @@
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(33, 200, 33, 0);
+  }
+}
+@media screen and (max-width: 600px) {
+  .guess span {
+    font-size: 9vw;
+    min-height: 15vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  .guess span {
+    font-size: 10vw;
   }
 }

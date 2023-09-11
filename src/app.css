@@ -3,7 +3,8 @@
   --bgColorDarker: rgb(26, 26, 26);
   --textColor: rgb(238, 238, 238);
   --textGrey: rgb(132, 132, 132);
-  --borderGrey: rgb(235, 235, 235);
+  --borderGrey: rgba(235, 235, 235, 1);
+  --borderEmptyGrey: rgba(235, 235, 235, 0.5);
   --fillGrey: rgba(170, 170, 170, 0.8);
   --correctGreen: rgb(33, 200, 33);
 }

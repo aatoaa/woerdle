@@ -33,6 +33,9 @@
   place-items: center;
   text-transform: uppercase;
   background-color: transparent;
+  border: 1.5px solid var(--borderEmptyGrey);
+}
+.active span {
   border: 1.5px solid var(--borderGrey);
 }
 .active > span:empty {

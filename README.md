@@ -14,11 +14,11 @@ https://play-woerdle.vercel.app/
 
 Clone the repo
 
-using `ssh`  
+using `ssh`
 ```bash
 git clone git@github.com:aatoaa/woerdle.git
 ```
-using `https`  
+using `https`
 ```bash
 git clone https://github.com/aatoaa/woerdle.git
 ```

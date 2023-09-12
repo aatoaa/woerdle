@@ -3,7 +3,7 @@
   --bgColorDarker: rgb(26, 26, 26);
   --textColor: rgb(238, 238, 238);
   --textGrey: rgb(132, 132, 132);
-  --borderGrey: rgbA(215, 215, 215, 0.9);
+  --borderGrey: rgba(215, 215, 215, 0.7);
   --borderEmptyGrey: rgba(133, 133, 133, 0.5);
   --fillGrey: rgba(170, 170, 170, 0.8);
   --correctGreen: rgb(33, 200, 33);
@@ -54,7 +54,9 @@ body {
   padding: 1.5vh 1.5vh 1.5vh;
   width: 100%;
   max-width: max-content;
-  background-color: rgba(103, 100, 105);
+  background: rgba(103, 100, 105, 0.5);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
   border-radius: 0.25rem;
 }
 .done .guess {

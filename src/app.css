@@ -7,7 +7,7 @@
   --borderEmptyGrey: rgba(133, 133, 133, 0.5);
   --fillGrey: rgba(170, 170, 170, 0.8);
   --correctGreen: rgb(33, 200, 33);
-  --bg-image: url('./bg.avif');
+  --bg-image: url('./assets/bg.avif');
 }
 
 html,

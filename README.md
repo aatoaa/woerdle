@@ -1,6 +1,6 @@
 # Woerdle
 
-![react-dance](https://github.com/aatoaa/woerdle/assets/130067118/12588c5f-2821-4593-b589-c47816348b9c)
+![react-turbo](https://github.com/aatoaa/woerdle/assets/130067118/483315bf-0e68-4e9b-bcce-d80c532c277d)
 
 Woerdle is a guessing game for 5 letter words.
 
@@ -14,11 +14,11 @@ https://play-woerdle.vercel.app/
 
 Clone the repo
 
-using `ssh`  
+using `ssh`
 ```bash
 git clone git@github.com:aatoaa/woerdle.git
 ```
-using `https`  
+using `https`
 ```bash
 git clone https://github.com/aatoaa/woerdle.git
 ```

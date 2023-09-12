@@ -38,23 +38,25 @@ function Game() {
   }, [done]);
 
   return (
-    <div className="game">
-      <div className="game-container">
-        <div className={`game-area ${done ? 'done' : ''}`}>
-          <Confetti enable={win} />
-          <GuessRows
-            guessArr={guessArr}
-            handleSubmit={handleSubmit}
-            answer={answer}
-            done={done}
-          />
-        </div>
-        <div className="extras">
-          <Button
-            text={`NEW GAME`}
-            clickHandler={handleStart}
-            disabled={!done}
-          />
+    <div className="woerdle">
+      <div className="game">
+        <div className="game-container">
+          <div className={`game-area ${done ? 'done' : ''}`}>
+            <Confetti enable={win} />
+            <GuessRows
+              guessArr={guessArr}
+              handleSubmit={handleSubmit}
+              answer={answer}
+              done={done}
+            />
+          </div>
+          <div className="extras">
+            <Button
+              text={`NEW GAME`}
+              clickHandler={handleStart}
+              disabled={!done}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ describe('Game', async () => {
     fireEvent.keyDown(window, { key: 't' });
     fireEvent.keyDown(window, { key: 'Enter' });
     await waitFor(() => {
-      const disabledButton = screen.getByRole('button', { name: /new game/i });
+      const disabledButton = screen.getByRole('button', { name: /try again/i });
       expect(disabledButton).toBeDisabled();
     });
   });

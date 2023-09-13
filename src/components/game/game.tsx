@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useGameStore } from '../../hooks/useGameStore';
 import GameContainer from './game-container';
 import GameArea from './game-area';
 import GuessRows from '../guess';
@@ -16,20 +17,20 @@ function Game() {
   const [answer, setAnswer] = useState(getWord(wordList));
   const [newGuess, setNewGuess] = useState('');
   const [guessArr, setGuessArr] = useState<string[][] | undefined>(undefined);
-  const [done, setDone] = useState(false);
-  const [win, setWin] = useState(false);
+  const done = useGameStore((state) => state.done);
+  const win = useGameStore((state) => state.win);
 
   useEffect(() => {
     if (newGuess.length > 0) {
       const guess = checkCharMatch(newGuess, answer);
       if (checkWordMatch(newGuess, answer)) {
-        setWin(true);
-        setDone(true);
+        useGameStore.setState({ win: true });
+        useGameStore.setState({ done: true });
       }
       let newArr = guessArr ? [...guessArr] : [];
       newArr.push(guess);
       setGuessArr(newArr);
-      if (newArr.length === 6) setDone(true);
+      if (newArr.length === 6) useGameStore.setState({ done: true });
     }
   }, [newGuess]);
 
@@ -42,7 +43,7 @@ function Game() {
 
   return (
     <GameContainer>
-      <GameArea done={done} win={win}>
+      <GameArea>
         <GuessRows
           guessArr={guessArr}
           handleSubmit={handleSubmit}
@@ -72,8 +73,8 @@ function Game() {
   function handleStart() {
     setGuessArr(undefined);
     setNewGuess('');
-    setDone(false);
-    setWin(false);
+    useGameStore.setState({ done: false });
+    useGameStore.setState({ win: false });
     setAnswer(getWord(wordList));
   }
 }

@@ -40,6 +40,7 @@ npm run dev
 ### Tech Stack
 
 - [React](https://github.com/facebook/react) - [TypeScript](https://github.com/microsoft/TypeScript) - [Vite](https://github.com/vitejs/vite)
+- [Zustand](https://github.com/pmndrs/zustand)
 - [React Confetti Explosion](https://github.com/herrethan/react-confetti-explosion)
 - [Vitest](https://github.com/vitest-dev/vitest) with 90%+ coverage
 
